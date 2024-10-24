@@ -7,19 +7,19 @@ document.querySelector("#bars-btn").onclick = () => {
 let cartItem = document.querySelector(".cart-items-container");
 
 document.querySelector("#cart-btn").onclick = () => {
-  cartItem.classList.toggle("active");
+  if (cartItem.style.right === "0px" || cartItem.style.right === "0") {
+    cartItem.style.right = "-100%"; 
+  } else {
+    cartItem.style.right = "0";
+  }
 };
 
-let searchForm = document.querySelector('.search-form');
+let searchForm = document.querySelector(".search-form");
 
-document.querySelector('#search-btn').onclick = () =>{
-    console.log("kabir")
-    searchForm.classList.toggle('active');
-}
-
-// let btn = document.querySelector("#search-btn");
-
-// btn.addEventListener("click", () => {
-//   console.log("kabir");
-//   searchForm.classList.toggle(".active");
-// });
+document.querySelector("#search-btn").onclick = () => {
+  if (searchForm.style.transform === "scaleY(1)") {
+    searchForm.style.transform = "scaleY(0)";
+  } else {
+    searchForm.style.transform = "scaleY(1)";
+  }
+};
